@@ -10,9 +10,6 @@ import { MdOutlineWatchLater } from "react-icons/md";
 import { SlLike } from "react-icons/sl";
 
 import { FaYoutube } from "react-icons/fa6"
-import { SiYoutubestudio } from "react-icons/si"
-import { SiYoutubekids } from "react-icons/si"
-import { SiYoutubemusic } from "react-icons/si"
 
 import { BsFire } from "react-icons/bs";
 import { SiTrendmicro } from "react-icons/si"
@@ -28,6 +25,15 @@ import { GiGraduateCap } from "react-icons/gi";
 import { TbHanger2 } from "react-icons/tb";
 import { SiStylelint } from "react-icons/si"
 import { MdPodcasts } from "react-icons/md"
+import { BsYoutube } from "react-icons/bs";
+import { SiYoutubestudio } from "react-icons/si"
+import { SiYoutubemusic } from "react-icons/si"
+import { SiYoutubekids } from "react-icons/si"
+import { IoSettingsOutline } from "react-icons/io5";
+import { FiFlag } from "react-icons/fi";
+import { MdHelpOutline } from "react-icons/md";
+import { RiFeedbackLine } from "react-icons/ri";
+
 
 const Sidebar = () => {
   const sidebarItems = [
@@ -139,7 +145,50 @@ const Sidebar = () => {
             icon: <MdPodcasts />,
           }
   ]
-  
+  const sidebarItems4 = [
+    {
+      id: 1,
+      name: "Youtube Premium",
+      icon: <BsYoutube />,
+    },
+    {
+      id: 2,
+      name: "YouTube Studio",
+      icon: <SiYoutubestudio />,
+    },
+    {
+      id: 3,
+      name: "YouTube Music",
+      icon: <SiYoutubemusic />,
+    },
+    {
+      id: 4,
+      name: "YouTube Kids",
+      icon: <SiYoutubekids />,
+    }
+  ]
+  const sidebarItems5 = [
+    {
+      id: 1,
+      name: "Settings",
+      icon: <IoSettingsOutline />,
+    },
+    {
+      id: 2,
+      name: "Report history",
+      icon: <FiFlag />,
+    },
+    {
+      id: 3,
+      name: "Help",
+      icon: <MdHelpOutline />,
+    },
+    {
+      id: 4,
+      name: "Send feedback",
+      icon: <RiFeedbackLine />,
+    }
+  ]
   return (
     <div className="px-6 w-[20%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden mt-20">
         {/*----------------- home----------- */}
@@ -161,7 +210,7 @@ const Sidebar = () => {
         {/* ----------you---------- */}
         <div className="mt-4 items-center space-y-3">
             <div className="flex items-center space-x-2">
-                <h1>You</h1>
+                <h1 className="font-semibold">You</h1>
                 <FaChevronRight />
             </div>
         {sidebarItems2.map((item) => {
@@ -181,7 +230,7 @@ const Sidebar = () => {
       {/* --------Explore------------ */}
       <div className="mt-4 items-center space-y-3">
             <div className="flex items-center space-x-2">
-                <h1>Explore</h1>
+                <h1 className="font-semibold">Explore</h1>
                 <FaChevronRight />
             </div>
         {sidebarItems3.map((item) => {
@@ -197,7 +246,51 @@ const Sidebar = () => {
       </div>
       <br />
       <hr />
+        {/* ------------More Section----------- */}
+        <div className="mt-4 items-center space-y-3">
+            <div className="flex items-center space-x-2">
+                <h1 className="font-semibold">More From YouTube</h1>
+                
+            </div>
+        {sidebarItems4.map((item) => {
+          return (
+            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+              <div className="text-xl cursor-pointer text-red-500">
+                {item.icon}
+              </div>
+              <span className="cursor-pointer">{item.name}</span>
+            </div>
+          )
+        })}
+      </div>
+      <br />
+      <hr />
 
+      {/* ----Setting----- */}
+      <div className="mt-4 items-center space-y-3">
+            <div className="flex items-center space-x-2">
+                <h1 className="font-semibold">More From YouTube</h1>
+                
+            </div>
+        {sidebarItems5.map((item) => {
+          return (
+            <div className="flex items-center space-x-6 hover:bg-gray-300 duration-300 rounded-xl p-1">
+              <div className="text-xl cursor-pointer">
+                {item.icon}
+              </div>
+              <span className="cursor-pointer">{item.name}</span>
+            </div>
+          )
+        })}
+      </div>
+      <br />
+      <hr />
+      
+      <span className="text-xs font-semibold text-gray-500">About Press Copyright<br />Contact us Creators<br />Advertise Developments<br /><br />
+      <p>Terms Privacy Policy & Safety <br />How YouTube works<br />Test new features</p>
+      </span>
+        <br />
+        <p className="text-xs text-gray-800 mt-1">© 2025 sachin</p>
     </div>
   )
 }
